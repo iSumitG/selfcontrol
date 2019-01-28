@@ -36,6 +36,13 @@ NSString* const kPfctlExecutablePath = @"/sbin/pfctl";
 		 "block return out proto udp from any to any\n"
 		 "\n"];
 	}
+    
+    if(!isWhitelist) {
+        [rules appendString: @"block out proto udp from any to any port 53\n"];
+        [rules appendString: @"block out proto tcp from any to any port 53\n"];
+        [rules appendString: @"pass out proto udp from any to 208.67.222.123 port 53\n"];
+        [rules appendString: @"pass out proto tcp from any to 208.67.220.123 port 53\n"];
+    }
 }
 - (void)addWhitelistFooter:(NSMutableString*)configText {
 	[configText appendString: @"pass out proto tcp from any to any port 53\n"];
