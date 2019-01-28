@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
 		}
 
 		if([modeString isEqual: @"--install"]) {
-			NSFileManager* fileManager = [NSFileManager defaultManager];
+			/*NSFileManager* fileManager = [NSFileManager defaultManager];
 
 			// Initialize writeErr to nil so calling messages on it later don't cause
 			// crashes (it doesn't make sense we need to do this, but whatever).
@@ -198,7 +198,7 @@ int main(int argc, char* argv[]) {
 			if([fileManager fileExistsAtPath: SelfControlLockFilePath]) {
 				NSLog(@"ERROR: Lock already established.  Attempting to stop block.");
 
-				removeBlock(controllingUID);
+				//removeBlock(controllingUID); //-- edited by Sumit Gupta
 
 				printStatus(-219);
 				exit(EX_CONFIG);
@@ -227,7 +227,7 @@ int main(int argc, char* argv[]) {
 				printStatus(-211);
                 NSLog(@"WARNING: Launch daemon load returned a failure status code.");
 				exit(EX_UNAVAILABLE);
-			} else NSLog(@"INFO: Block successfully added.");
+			} else NSLog(@"INFO: Block successfully added.");*/
 		}
 		if([modeString isEqual: @"--remove"]) {
 			// So you think you can rid yourself of SelfControl just like that?
